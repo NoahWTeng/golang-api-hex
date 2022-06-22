@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	app "api-golang-hex/src"
+	"log"
+)
 
 func main() {
-	fmt.Println("hello world!")
+
+	application, err := app.CreateNewApp()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	_ = application.Init()
 }
